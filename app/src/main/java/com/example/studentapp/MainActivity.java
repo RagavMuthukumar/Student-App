@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     // Declare UI components
-    private ImageView googleIcon, fbIcon, xIcon, appLogo;
+    private ImageView appLogo;
     private TextView titleText, signUpLink, forgotPasswordLink;
     private EditText emailInput, passwordInput;
     private Button loginButton;
@@ -32,10 +32,6 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize UI components using their IDs
-        googleIcon = findViewById(R.id.googleIcon);
-        fbIcon = findViewById(R.id.fbIcon);
-        xIcon = findViewById(R.id.xIcon);
         appLogo = findViewById(R.id.appLogo);
         titleText = findViewById(R.id.titleText);
         signUpLink = findViewById(R.id.signUpLink);
@@ -77,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
             // Navigate to Forgot Password screen or show dialog
             Toast.makeText(MainActivity.this, "Forgot Password clicked", Toast.LENGTH_SHORT).show();
             // Example Intent (if implemented):
-            // Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
-            // startActivity(intent);
+             Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+             startActivity(intent);
         });
 
         // Set OnClickListener for Sign Up Link
@@ -88,22 +84,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Handle Social Media Icon Click (Google)
-        googleIcon.setOnClickListener(v -> {
-            // Handle Google Login or action
-            Toast.makeText(MainActivity.this, "Google Icon clicked", Toast.LENGTH_SHORT).show();
-        });
-
-        // Handle Social Media Icon Click (Facebook)
-        fbIcon.setOnClickListener(v -> {
-            // Handle Facebook Login or action
-            Toast.makeText(MainActivity.this, "Facebook Icon clicked", Toast.LENGTH_SHORT).show();
-        });
-
-        // Handle Social Media Icon Click (Twitter)
-        xIcon.setOnClickListener(v -> {
-            // Handle Twitter Login or action
-            Toast.makeText(MainActivity.this, "Twitter Icon clicked", Toast.LENGTH_SHORT).show();
-        });
     }
 }

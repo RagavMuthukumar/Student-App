@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".MainActivity">
+    tools:context=".ForgotPasswordActivity">
 
     <!-- Glassmorphism Container -->
     <androidx.cardview.widget.CardView
@@ -16,7 +16,7 @@
         android:layout_margin="20dp"
         app:cardCornerRadius="30dp"
         app:cardBackgroundColor="@color/transparent_white"
-        app:cardElevation="0dp"
+        app:cardElevation="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- App Logo -->
+            <!-- App Logo (Optional) -->
             <ImageView
                 android:id="@+id/appLogo"
                 android:layout_width="100dp"
@@ -42,7 +42,7 @@
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Student App"
+                android:text="Forgot Password"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF"
                 android:fontFamily="sans-serif-medium"
@@ -54,57 +54,29 @@
                 android:id="@+id/emailInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
                 android:background="@drawable/edit_text_bg"
                 android:padding="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="20dp" />
 
-            <!-- Password Input -->
-            <EditText
-                android:id="@+id/passwordInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:background="@drawable/edit_text_bg"
-                android:padding="10dp"
-                android:layout_marginBottom="10dp"
-                android:inputType="textPassword" />
-
-            <!-- Forgot Password Link -->
-            <TextView
-                android:id="@+id/forgotPasswordLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password?"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:layout_gravity="end"
-                android:layout_marginBottom="20dp"
-                android:clickable="true"
-                android:focusable="true" />
-
-            <!-- Login Button -->
+            <!-- Send OTP Button -->
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/sendOtpButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Send Password Reset Email"
                 android:backgroundTint="@color/purple_500"
                 android:textColor="#FFFFFF"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Sign Up Link -->
-            <TextView
-                android:id="@+id/signUpLink"
-                android:layout_width="wrap_content"
+            <!-- Reset Password Button (This is not used in the current implementation) -->
+            <Button
+                android:id="@+id/resetPasswordButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account? Sign Up"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp" />
-
-            <!-- Social Login Buttons -->
+                android:text="Reset Password"
+                android:visibility="gone" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

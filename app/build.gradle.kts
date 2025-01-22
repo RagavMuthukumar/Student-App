@@ -51,6 +51,9 @@ dependencies {
     // Firebase Authentication - included via the BOM, so no need to specify it again
     implementation("com.google.firebase:firebase-auth")
 
+    implementation("com.sun.mail:javax.mail:1.6.2")
+    implementation(libs.support.annotations)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
